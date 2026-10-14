@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mapa de red Pan Pa'ya</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -56,6 +61,8 @@ header p{margin:6px 0 0;color:var(--muted);max-width:68ch}
 .mono{font-family:var(--font-mono)}
 @media (prefers-reduced-motion:no-preference){.building svg g.floor{animation:rise .35s ease both}@keyframes rise{from{transform:translateY(6px)}to{transform:none}}}
 </style>
+</head>
+<body>
 
 <div class="wrap">
   <header>
@@ -301,3 +308,5 @@ drawLegend();
 let start='BOG';try{const v=localStorage.getItem('ppy-sede');if(v&&S[v])start=v;}catch(e){}
 select(start);
 </script>
+</body>
+</html>
