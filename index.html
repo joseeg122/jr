@@ -113,47 +113,49 @@ const S={
  BOG:{name:'Bogotá',role:'Sede principal · hub de servicios',lat:4.71,lon:-74.07,block:'10.20.0.0/20',wan:'Hub 1 Gb/s',inet:'500 Mb/s',router:'2 × FortiGate 100F (HA)',
   wifi:'35 portátiles · 35 móviles · 10 cámaras · 60 invitados',sw:'2 × 6300M núcleo · 3 × 6200M · 7 × 6100',ap:30,
   floors:[
-   {n:'Piso 5',a:'Gerencia y centro de datos',rack:['Núcleo 6300M ×2 (VSF)','2 × FortiGate 100F','6100 48G'],g:[
+   {n:'Piso 5',a:'Gerencia y centro de datos',k:'oficinas',rk:'Cuarto de datos',z:{A:['Centro de datos','Hosts, NAS y backup'],B:['Gerencia','Oficinas ejecutivas']},w:{pc:[0,1,0],phone:[0,1,0],printer:[0,1,0],ptz:[0,1,0],cam:[.5,.5,0],acc:[.5,.5,0],iot:[.5,.5,0]},rack:['Núcleo 6300M ×2 (VSF)','2 × FortiGate 100F','6100 48G'],g:[
      {t:'srv',n:5,v:80,l:'Hosts, NAS, NVR, backup',s:'10 GbE / 2×10G LACP'},{t:'pc',n:10,v:10,l:'PC gerencia',s:'1 GbE detrás del teléfono'},{t:'phone',n:10,v:40,l:'Teléfonos'},
      {t:'printer',n:2,v:10,l:'Impresoras'},{t:'cam',n:4,v:50,l:'Cámaras'},{t:'ptz',n:2,v:50,l:'PTZ'},{t:'vp',n:1,v:50,l:'Videop.'},{t:'acc',n:2,v:60,l:'Accesos'},{t:'iot',n:4,v:60,l:'Sensores'},{t:'ap',n:6,v:0,l:'AP'}]},
-   {n:'Piso 4',a:'Mercadeo, diseño y salas',rack:['6200M (VSF 1/2)','6200M (VSF 2/2)'],g:[
+   {n:'Piso 4',a:'Mercadeo, diseño y salas',k:'oficinas',z:{A:['Mercadeo y diseño','Estaciones de 5 GbE'],B:['Salas de reuniones','Atención y apoyo']},rack:['6200M (VSF 1/2)','6200M (VSF 2/2)'],g:[
      {t:'ws',n:12,v:10,l:'Mercadeo / diseño',s:'5 GbE mGig'},{t:'phone',n:10,v:40,l:'Teléfonos'},{t:'printer',n:2,v:10,l:'Impresoras'},{t:'cam',n:4,v:50,l:'Cámaras'},{t:'acc',n:1,v:60,l:'Acceso'},{t:'ap',n:6,v:0,l:'AP'}]},
-   {n:'Piso 3',a:'TI / Ingeniería',rack:['6200M','6100 24G'],g:[
+   {n:'Piso 3',a:'TI / Ingeniería',k:'oficinas',z:{A:['TI / Ingeniería','Desarrollo y soporte'],B:['Soporte y laboratorio','Pruebas y atención']},rack:['6200M','6100 24G'],g:[
      {t:'ws',n:6,v:20,l:'TI alto desempeño',s:'5 GbE mGig'},{t:'pc',n:12,v:20,l:'TI estándar'},{t:'phone',n:10,v:40,l:'Teléfonos'},{t:'printer',n:1,v:10,l:'Impr.'},
      {t:'cam',n:4,v:50,l:'Cámaras'},{t:'vp',n:1,v:50,l:'Videop.'},{t:'acc',n:2,v:60,l:'Accesos'},{t:'iot',n:2,v:60,l:'Sensores'},{t:'ap',n:6,v:0,l:'AP'}]},
-   {n:'Piso 2',a:'Administración, contabilidad, talento humano',rack:['6100 48G','6100 24G'],g:[
+   {n:'Piso 2',a:'Administración, contabilidad, talento humano',k:'oficinas',z:{A:['Administración y contabilidad','Oficinas'],B:['Talento humano','Atención a empleados']},rack:['6100 48G','6100 24G'],g:[
      {t:'pc',n:40,v:10,l:'PC administrativos',s:'1 GbE (32 detrás del teléfono)'},{t:'phone',n:32,v:40,l:'Teléfonos'},{t:'printer',n:3,v:10,l:'Impresoras'},{t:'cam',n:4,v:50,l:'Cámaras'},{t:'acc',n:1,v:60,l:'Acceso'},{t:'ap',n:6,v:0,l:'AP'}]},
-   {n:'Piso 1',a:'Recepción, producción y seguridad',rack:['6100 48G (A)','6100 48G (B)','6100 24G (C)'],g:[
+   {n:'Piso 1',a:'Recepción, producción y seguridad',k:'planta',z:{B:['Seguridad y recepción','Acceso y monitoreo']},rack:['6100 48G (A)','6100 48G (B)','6100 24G (C)'],g:[
      {t:'pos',n:30,v:30,l:'POS / producción'},{t:'pc',n:5,v:10,l:'PC recepción y seguridad'},{t:'phone',n:8,v:40,l:'Teléfonos'},{t:'printer',n:4,v:10,l:'Etiquetas'},
      {t:'cam',n:12,v:50,l:'Cámaras fijas'},{t:'ptz',n:4,v:50,l:'PTZ'},{t:'vp',n:4,v:50,l:'Videoporteros'},{t:'acc',n:4,v:60,l:'Accesos'},{t:'iot',n:12,v:60,l:'Sensores hornos/frío'},{t:'ap',n:6,v:0,l:'AP'}]}
   ]},
  MED:{name:'Medellín',role:'Sede regional · 2 pisos de 550 m²',lat:6.24,lon:-75.58,block:'10.20.16.0/20',wan:'400 Mb/s',inet:'200 Mb/s',router:'FortiGate 61F',
   wifi:'15 portátiles · 15 móviles · 5 cámaras · 25 invitados',sw:'6200M · 6100 48G · 6100 24G',ap:8,
   floors:[
-   {n:'Piso 2',a:'Administración, TI y mercadeo',rack:['FortiGate 61F','6200M (SW-MED-1)'],g:[
+   {n:'Piso 2',a:'Administración, TI, mercadeo y ventas',k:'oficinas',rack:['FortiGate 61F','6200M (SW-MED-1)'],g:[
      {t:'ws',n:6,v:10,l:'TI alto + mercadeo',s:'5 GbE mGig'},{t:'pc',n:4,v:20,l:'TI estándar'},{t:'pc',n:18,v:10,l:'PC administrativos',s:'1 GbE detrás del teléfono'},{t:'phone',n:18,v:40,l:'Teléfonos'},{t:'printer',n:3,v:10,l:'Impr.'},{t:'ap',n:4,v:0,l:'AP'}]},
-   {n:'Piso 1',a:'Producción, ventas y seguridad',rack:['6100 48G (SW-MED-2)','6100 24G (SW-MED-3)','NVR regional'],g:[
+   {n:'Piso 1',a:'Producción y seguridad',k:'planta',rack:['6100 48G (SW-MED-2)','6100 24G (SW-MED-3)','NVR regional'],g:[
      {t:'pos',n:12,v:30,l:'POS / producción'},{t:'phone',n:7,v:40,l:'Teléfonos'},{t:'printer',n:2,v:10,l:'Impr.'},{t:'cam',n:12,v:50,l:'Cámaras'},{t:'ptz',n:2,v:50,l:'PTZ'},{t:'vp',n:2,v:50,l:'Videop.'},{t:'acc',n:4,v:60,l:'Accesos'},{t:'iot',n:8,v:60,l:'Sensores'},{t:'ap',n:4,v:0,l:'AP'}]}
   ]},
  CAL:{name:'Cali',role:'Sede regional · 2 pisos de 500 m²',lat:3.45,lon:-76.53,block:'10.20.32.0/20',wan:'400 Mb/s',inet:'200 Mb/s',router:'FortiGate 61F',
   wifi:'12 portátiles · 12 móviles · 4 cámaras · 20 invitados',sw:'6200M · 6100 48G',ap:8,
   floors:[
-   {n:'Piso 2',a:'Administración',rack:['FortiGate 61F','6200M (SW-CAL-1)'],g:[
+   {n:'Piso 2',a:'Administración y ventas',k:'oficinas',rack:['FortiGate 61F','6200M (SW-CAL-1)'],g:[
      {t:'ws',n:4,v:10,l:'TI alto + mercadeo',s:'5 GbE mGig'},{t:'pc',n:3,v:20,l:'TI'},{t:'pc',n:15,v:10,l:'PC administrativos',s:'1 GbE detrás del teléfono'},{t:'phone',n:15,v:40,l:'Teléfonos'},{t:'printer',n:4,v:10,l:'Impr.'},{t:'acc',n:4,v:60,l:'Accesos'},{t:'iot',n:6,v:60,l:'Sensores'},{t:'ap',n:4,v:0,l:'AP'}]},
-   {n:'Piso 1',a:'Producción, ventas y seguridad',rack:['6100 48G (SW-CAL-2)','NVR regional'],g:[
+   {n:'Piso 1',a:'Producción y seguridad',k:'planta',rack:['6100 48G (SW-CAL-2)','NVR regional'],g:[
      {t:'pos',n:10,v:30,l:'POS / producción'},{t:'phone',n:7,v:40,l:'Teléfonos'},{t:'cam',n:10,v:50,l:'Cámaras'},{t:'ptz',n:2,v:50,l:'PTZ'},{t:'vp',n:2,v:50,l:'Videop.'},{t:'ap',n:4,v:0,l:'AP'}]}
   ]},
- BAQ:{name:'Barranquilla',role:'Sede regional · 1 piso de 650 m²',lat:10.96,lon:-74.80,block:'10.20.48.0/20',wan:'300 Mb/s',inet:'100 Mb/s',router:'FortiGate 61F',
+ BAQ:{name:'Barranquilla',role:'Sede regional · 2 pisos (650 m² en total)',lat:10.96,lon:-74.80,block:'10.20.48.0/20',wan:'300 Mb/s',inet:'100 Mb/s',router:'FortiGate 61F',
   wifi:'10 portátiles · 10 móviles · 3 cámaras · 15 invitados',sw:'6200M · 6100 24G',ap:5,
   floors:[
-   {n:'Piso 1',a:'Administración, producción, ventas y seguridad',rack:['FortiGate 61F','6200M (SW-BAQ-1)','6100 24G (SW-BAQ-2)','NVR regional'],g:[
-     {t:'ws',n:2,v:10,l:'Mercadeo',s:'5 GbE mGig'},{t:'pc',n:2,v:20,l:'TI'},{t:'pc',n:12,v:10,l:'PC administrativos',s:'1 GbE detrás del teléfono'},{t:'phone',n:18,v:40,l:'Teléfonos'},{t:'printer',n:3,v:10,l:'Impr.'},
-     {t:'pos',n:8,v:30,l:'POS'},{t:'cam',n:8,v:50,l:'Cámaras'},{t:'ptz',n:1,v:50,l:'PTZ'},{t:'vp',n:2,v:50,l:'Videop.'},{t:'acc',n:3,v:60,l:'Accesos'},{t:'iot',n:5,v:60,l:'Sensores'},{t:'ap',n:5,v:0,l:'AP'}]}
+   {n:'Piso 2',a:'Administración, mercadeo y ventas',k:'oficinas',rack:['6100 24G (SW-BAQ-2)'],g:[
+     {t:'ws',n:2,v:10,l:'Mercadeo',s:'5 GbE mGig'},{t:'pc',n:2,v:20,l:'TI'},{t:'pc',n:12,v:10,l:'PC administrativos',s:'1 GbE detrás del teléfono'},{t:'phone',n:12,v:40,l:'Teléfonos'},{t:'printer',n:2,v:10,l:'Impr.'},{t:'ap',n:3,v:0,l:'AP'}]},
+   {n:'Piso 1',a:'Producción y seguridad',k:'planta',rack:['FortiGate 61F','6200M (SW-BAQ-1)','NVR regional'],g:[
+     {t:'pos',n:8,v:30,l:'POS'},{t:'phone',n:6,v:40,l:'Teléfonos'},{t:'printer',n:1,v:10,l:'Impr.'},{t:'cam',n:8,v:50,l:'Cámaras'},{t:'ptz',n:1,v:50,l:'PTZ'},{t:'vp',n:2,v:50,l:'Videop.'},{t:'acc',n:3,v:60,l:'Accesos'},{t:'iot',n:5,v:60,l:'Sensores'},{t:'ap',n:2,v:0,l:'AP'}]}
+  
   ]},
  BUC:{name:'Bucaramanga',role:'Sede regional · 1 piso de 500 m²',lat:7.12,lon:-73.12,block:'10.20.64.0/20',wan:'300 Mb/s',inet:'100 Mb/s',router:'FortiGate 61F',
   wifi:'8 portátiles · 8 móviles · 3 cámaras · 12 invitados',sw:'6200M · 6100 24G',ap:4,
   floors:[
-   {n:'Piso 1',a:'Administración, producción, ventas y seguridad',rack:['FortiGate 61F','6200M (SW-BUC-1)','6100 24G (SW-BUC-2)','NVR regional'],g:[
+   {n:'Piso 1',a:'Administración, producción, ventas y seguridad',k:'unico',rack:['FortiGate 61F','6200M (SW-BUC-1)','6100 24G (SW-BUC-2)','NVR regional'],g:[
      {t:'ws',n:2,v:10,l:'Mercadeo',s:'5 GbE mGig'},{t:'pc',n:2,v:20,l:'TI'},{t:'pc',n:10,v:10,l:'PC administrativos',s:'1 GbE detrás del teléfono'},{t:'phone',n:15,v:40,l:'Teléfonos'},{t:'printer',n:3,v:10,l:'Impr.'},
      {t:'pos',n:6,v:30,l:'POS'},{t:'cam',n:6,v:50,l:'Cámaras'},{t:'ptz',n:1,v:50,l:'PTZ'},{t:'vp',n:1,v:50,l:'Videop.'},{t:'acc',n:2,v:60,l:'Accesos'},{t:'iot',n:4,v:60,l:'Sensores'},{t:'ap',n:4,v:0,l:'AP'}]}
   ]}
@@ -198,8 +200,9 @@ function label(text,h,o={}){
   x.fillStyle=o.fg||'#fff';x.textBaseline='middle';x.textAlign='center';
   lines.forEach((l,i)=>x.fillText(l,w/2,7+lh*(i+.5)));
   const tex=new THREE.CanvasTexture(c);tex.minFilter=THREE.LinearFilter;
+  if(o.flat){const m=new THREE.Mesh(new THREE.PlaneGeometry(h*w/ht,h),new THREE.MeshBasicMaterial({map:tex,transparent:true,depthWrite:false}));m.rotation.x=-Math.PI/2;m.renderOrder=2;return m;}
   const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tex,transparent:true,depthTest:false}));
-  sp.scale.set(h*w/ht,h,1);sp.renderOrder=10;return sp;
+  sp.scale.set(h*w/ht,h,1);if(o.left)sp.center.set(0,.5);sp.renderOrder=10;return sp;
 }
 const stages=[];
 function makeStage(box,fov){
@@ -289,96 +292,156 @@ function drawMap(){
   ORDER.forEach(k=>{mapStage.rings[k].visible=k===cur;});
 }
 
-/* ---------- EDIFICIO 3D ---------- */
-const PITCH=1.2,MAXC=14,X0=-13.4,XMAX=19.6,BW=40,RACKX=-17.4,SPUR=-14.9,AISLE=2.2,FH=8,TRAY=4.2;
+/* ---------- EDIFICIO 3D (planos por sede) ---------- */
+/* Planta tipo: cuarto de racks arriba al centro, zona grande a la izquierda, zona de atención a la derecha,
+   y franja inferior con sala / escaleras / baños. Coordenadas de planta en fracciones (u,v) de BW × BD. */
+const BW=52,BD=21,FH=8,TRAY=4.2,WALLH=1.1,XSA=-4.3,XSB=2.9;
+const U=u=>(u-.5)*BW,V=v=>(v-.5)*BD;
+const RX=U(.485),RZ=V(.135);
+const ZC={pr:'#2b9a5a',se:'#d0443c',ad:'#8a4fd1',ve:'#c2407a',rk:'#c47a12',gr:'#8c98a4'};
+const WALL_COMMON=[[0,0,1,0],[0,1,1,1],[0,0,0,1],[.43,0,.43,.27],[.54,0,.54,.27],[.43,.27,.54,.27,'s',[[.3,.7,1]]],[.43,.27,.43,.42,'g'],[.43,.42,.43,.67,'s',[[.35,.75,1]]],
+  [.43,.67,1,.67,'s',[[.47,.58,-1],[.72,.82,-1]]],[.64,.67,.64,1],[.8,.67,.8,1]];
+const TPL={
+ planta:{rk:'Gabinete',ground:true,
+  zones:[{id:'A',n:'Producción',s:'Hornos, empaque y despacho',c:'pr',rects:[[0,0,.43,1],[.43,.67,.64,1]],lab:[.215,.05]},
+         {id:'B',n:'Seguridad',s:'Acceso y monitoreo',c:'se',rects:[[.54,0,1,.27],[.43,.27,1,.67]],lab:[.77,.05]}],
+  walls:[...WALL_COMMON,[1,0,1,1,'s',[[.1,.3,-1]]]]},
+ oficinas:{rk:'Telecom',
+  zones:[{id:'A',n:'Administración',s:'Oficinas y gerencia',c:'ad',rects:[[0,0,.43,1]],lab:[.215,.05]},
+         {id:'B',n:'Ventas',s:'Atención y asesores',c:'ve',rects:[[.54,0,1,.27],[.43,.27,1,.67]],lab:[.77,.05]},
+         {id:'C',n:'Sala de juntas',s:'',c:'gr',rects:[[.43,.67,.64,1]],lab:[.535,.84],noPack:true}],
+  walls:[...WALL_COMMON,[1,0,1,1],[.43,.67,.43,1,'s',[[.2,.6,-1]]]]},
+ unico:{rk:'Gabinete',ground:true,
+  zones:[{id:'A',n:'Administración',s:'Oficinas y gerencia',c:'ad',rects:[[0,0,.43,.5]],lab:[.215,.04]},
+         {id:'B',n:'Producción',s:'Hornos, empaque y despacho',c:'pr',rects:[[0,.5,.43,1],[.43,.67,.64,1]],lab:[.215,.54]},
+         {id:'C',n:'Ventas',s:'Atención y asesores',c:'ve',rects:[[.54,0,1,.3]],lab:[.77,.04]},
+         {id:'D',n:'Seguridad',s:'Acceso y monitoreo',c:'se',rects:[[.43,.3,1,.67]],lab:[.7,.34]}],
+  walls:[...WALL_COMMON,[1,0,1,1,'s',[[.1,.3,-1]]],[0,.5,.43,.5,'s',[[.45,.6,1]]],[.54,.3,1,.3,'s',[[.6,.72,1]]]]}
+};
+const WGT={
+ planta:{pos:[1,0],iot:[1,0],printer:[1,0],pc:[0,1],ws:[0,1],phone:[.4,.6],cam:[.5,.5],ptz:[0,1],vp:[0,1],acc:[.5,.5],ap:[.5,.5],srv:[1,0]},
+ oficinas:{ws:[1,0,0],pc:[.65,.35,0],pc20:[1,0,0],phone:[.6,.4,0],printer:[.6,.4,0],pos:[0,1,0],iot:[.5,.5,0],cam:[.4,.5,.1],ptz:[0,1,0],vp:[0,1,0],acc:[.3,.5,.2],ap:[.4,.35,.25],srv:[1,0,0]},
+ unico:{ws:[1,0,0,0],pc:[.8,0,.2,0],pc20:[1,0,0,0],phone:[.6,0,.25,.15],printer:[.5,.2,.3,0],pos:[0,.5,.5,0],iot:[0,1,0,0],cam:[.2,.2,.2,.4],ptz:[0,0,0,1],vp:[0,0,0,1],acc:[.2,.2,0,.6],ap:[.25,.25,.25,.25],srv:[1,0,0,0]}};
 const SHAPE={pc:{b:[.8,.55,.55]},ws:{b:[.85,.8,.6]},pos:{b:[.85,.45,.65]},phone:{b:[.6,.22,.5]},printer:{b:[.95,.5,.7]},cam:{s:.28,post:1.4},ptz:{c:[.3,.5],post:1.4},vp:{b:[.4,.9,.25]},acc:{b:[.35,.55,.2]},iot:{c:[.2,.35]},ap:{c:[.42,.14],post:1.7},srv:{b:[.9,1.8,.9]}};
-function layoutFloor(fl){
-  const bands=[];let cb=null,x=X0;
-  fl.g.forEach(gr=>{const cols=Math.min(gr.n,MAXC),rows=Math.ceil(gr.n/MAXC),w=cols*PITCH;
-    if(!cb||x+w>XMAX+.01){cb={groups:[],rows:0};bands.push(cb);x=X0;}
-    cb.groups.push({gr,x,cols,rows,w});x+=w+1;cb.rows=Math.max(cb.rows,rows);});
-  const used={1:0,'-1':0};
-  bands.forEach(b=>{b.depth=1.6+b.rows*PITCH+.4;b.side=used[1]<=used[-1]?1:-1;b.z0=AISLE+used[b.side];used[b.side]+=b.depth;});
-  return {bands,used};
+function alloc(n,w){const raw=w.map(x=>x*n),cnt=raw.map(Math.floor);let left=n-cnt.reduce((a,b)=>a+b,0);
+  raw.map((r,i)=>[r-Math.floor(r),i]).sort((a,b)=>b[0]-a[0]||a[1]-b[1]).forEach(([f,i])=>{if(left>0&&w[i]>0){cnt[i]++;left--;}});return cnt;}
+function packZone(zone,groups,p,zp){
+  const rows=[],zmax=Math.max(...zone.rects.map(r=>V(r[3])));
+  for(let z=V(zone.rects[0][1])+2.4;z<=zmax-.9+1e-6;z+=zp){const cells=[];
+    zone.rects.forEach(r=>{if(z>=V(r[1])+.9&&z<=V(r[3])-.9)for(let x=U(r[0])+1;x<=U(r[2])-1+1e-6;x+=p)cells.push(x);});
+    cells.sort((a,b)=>a-b);if(cells.length)rows.push({z,cells});}
+  const out=[];let ri=0,ci=0,over=false;
+  groups.forEach(g=>{
+    if(rows[ri]&&ci>0&&g.n>rows[ri].cells.length-ci&&g.n<=rows[ri].cells.length){ri++;ci=0;}
+    for(let i=0;i<g.n;i++){while(rows[ri]&&ci>=rows[ri].cells.length){ri++;ci=0;}
+      if(!rows[ri]){over=true;return;}out.push({g,i,x:rows[ri].cells[ci],z:rows[ri].z});ci++;}
+    ci++;});
+  return {out,over};
 }
-let bsel=null,bviewFn=null;
+let bsel=null;
 function drawBuilding(k){
   if(!HAS3D)return;
   const st=bldStage,s=S[k],M=matCache(),nf=s.floors.length,root=new THREE.Group();
   st.pick=[];bsel=null;
   const surf=cssv('--surface'),ink=cssv('--ink'),muted=cssv('--muted'),accent=cssv('--accent'),hub=cssv('--hub'),line=cssv('--line');
   st.renderer.setClearColor(cssv('--surface-2'));
-  const layouts=s.floors.map(layoutFloor);
-  const HALF=Math.max(8,AISLE+Math.max(...layouts.map(l=>Math.max(l.used[1],l.used[-1])))+1.2);
-  const levels=[];
   const box=(w,h,d,col,x,y,z,o)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),M(col,o));m.position.set(x,y,z);return m;};
+  const levels=[];
   s.floors.forEach((fl,fi)=>{
-    const li=nf-1-fi,y0=li*FH,yT=y0+TRAY,fg=new THREE.Group(),lay=layouts[fi];levels[li]=fg;root.add(fg);
+    const li=nf-1-fi,y0=li*FH,yT=y0+TRAY,fg=new THREE.Group(),T=TPL[fl.k||'oficinas'];levels[li]=fg;root.add(fg);
     const segs={};
     const path=(col,pts,t)=>{(segs[col]=segs[col]||[]);for(let i=0;i<pts.length-1;i++)segs[col].push([pts[i],pts[i+1],t]);};
     // losa + columnas
-    fg.add(box(BW,.3,HALF*2,surf,0,y0-.15,0,{transparent:true,opacity:.8}));
-    const sg=new THREE.BoxGeometry(BW,.3,HALF*2),se=new THREE.LineSegments(new THREE.EdgesGeometry(sg),new THREE.LineBasicMaterial({color:muted}));se.position.y=y0-.15;fg.add(se);
+    const sg=new THREE.BoxGeometry(BW,.3,BD);
+    fg.add(box(BW,.3,BD,surf,0,y0-.15,0,{transparent:true,opacity:.85}));
+    const se=new THREE.LineSegments(new THREE.EdgesGeometry(sg),new THREE.LineBasicMaterial({color:muted}));se.position.y=y0-.15;fg.add(se);
     const colH=li===nf-1?TRAY+1.6:FH;
-    [[-1,-1],[1,-1],[-1,1],[1,1]].forEach(([a,b])=>fg.add(box(.16,colH,.16,muted,a*BW/2,y0+colH/2,b*HALF,{transparent:true,opacity:.55})));
-    const nm=label(`${fl.n} · ${fl.a}`,1.1,{fg:surf,bg:ink});nm.position.set(-BW/2+nm.scale.x/2,y0+.9,HALF+1.3);fg.add(nm);
+    [[-1,-1],[1,-1],[-1,1],[1,1]].forEach(([a,b])=>fg.add(box(.16,colH,.16,muted,a*BW/2,y0+colH/2,b*BD/2,{transparent:true,opacity:.55})));
+    const nm=label(`${fl.n} · ${fl.a}`,1.1,{fg:surf,bg:ink,left:true});nm.position.set(-BW/2,y0+.9,BD/2+1.3);fg.add(nm);
+    // zonas: relleno de color + rótulo en el piso
+    const fill=(r,c,op)=>{const m=box((r[2]-r[0])*BW,.04,(r[3]-r[1])*BD,ZC[c],U((r[0]+r[2])/2),y0+.02,V((r[1]+r[3])/2),{transparent:true,opacity:op});fg.add(m);};
+    const flat=(txt,u,v,col)=>{const l=label(txt,1.15,{fg:col||ink,flat:true});l.position.set(U(u),y0+.07,V(v));fg.add(l);};
+    const zname=z=>fl.z&&fl.z[z.id]?fl.z[z.id]:[z.n,z.s];
+    T.zones.forEach(z=>{z.rects.forEach(r=>fill(r,z.c,.2));const [n,sub]=zname(z);flat(sub?n+'\n'+sub:n,z.lab[0],z.lab[1]);});
+    fill([.43,0,.54,.27],'rk',.4);
+    fill([.64,.67,.8,1],'gr',.3);fill([.8,.67,1,1],'gr',.3);
+    flat(fl.rk||T.rk,.485,.235,ZC.rk);flat('Escaleras',.72,.93);flat('Baños',.9,.93);
+    for(let i=0;i<6;i++){const sw=(U(.8)-U(.64)-1.4)/6;fg.add(box(sw*.9,.2*(i+1),(V(1)-V(.67))*.45,muted,U(.64)+.7+sw*(i+.5),y0+.1*(i+1),V(.77),{transparent:true,opacity:.7}));}
+    if(T.ground){const ig=label('◀ Ingreso',1,{fg:surf,bg:ink,left:true});ig.position.set(BW/2+.6,y0+.6,V(.2));fg.add(ig);}
+    // paredes (con ventanales de vidrio) y puertas
+    const wm=M(ink,{transparent:true,opacity:.55}),gm=M('#3b82f6',{transparent:true,opacity:.4}),th=.24;
+    const wall=(a,b,glass)=>{const L=Math.hypot(b[0]-a[0],b[1]-a[1]);if(L<.01)return;const horiz=a[1]===b[1];
+      const m=new THREE.Mesh(new THREE.BoxGeometry(horiz?L:th,WALLH,horiz?th:L),glass?gm:wm);m.position.set((a[0]+b[0])/2,y0+WALLH/2,(a[1]+b[1])/2);fg.add(m);};
+    const door=(a,b,side)=>{const L=Math.hypot(b[0]-a[0],b[1]-a[1]),ax=[(b[0]-a[0])/L,(b[1]-a[1])/L],pp=a[1]===b[1]?[0,side]:[side,0],pts=[];
+      for(let q=0;q<=12;q++){const f=q/12*Math.PI/2;pts.push(new THREE.Vector3(a[0]+(ax[0]*Math.cos(f)+pp[0]*Math.sin(f))*L,y0+.06,a[1]+(ax[1]*Math.cos(f)+pp[1]*Math.sin(f))*L));}
+      pts.push(new THREE.Vector3(a[0],y0+.06,a[1]));fg.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts),new THREE.LineBasicMaterial({color:ink})));};
+    T.walls.forEach(([u0,v0,u1,v1,ty,gaps])=>{
+      const A=[U(u0),V(v0)],B=[U(u1),V(v1)],at=t=>[A[0]+(B[0]-A[0])*t,A[1]+(B[1]-A[1])*t];
+      let c=0;(gaps||[]).slice().sort((p,q)=>p[0]-q[0]).forEach(([g0,g1,side])=>{wall(at(c),at(g0),ty==='g');door(at(g0),at(g1),side);c=g1;});
+      wall(at(c),B,ty==='g');});
     // rack
-    const nr=fl.rack.length,rackH=Math.max(3.2,.7+nr*.72);
-    const rk=new THREE.BoxGeometry(2.5,rackH,2.3);
-    const rm=new THREE.Mesh(rk,M(muted,{transparent:true,opacity:.12}));rm.position.set(RACKX,y0+rackH/2,0);fg.add(rm);
+    const nr=fl.rack.length,rackH=Math.max(3.2,.7+nr*.72),rk=new THREE.BoxGeometry(2.5,rackH,2.3);
+    const rm=new THREE.Mesh(rk,M(muted,{transparent:true,opacity:.12}));rm.position.set(RX,y0+rackH/2,RZ);fg.add(rm);
     const re=new THREE.LineSegments(new THREE.EdgesGeometry(rk),new THREE.LineBasicMaterial({color:ink}));re.position.copy(rm.position);fg.add(re);
-    fl.rack.forEach((r,i)=>{const isFw=/FortiGate/.test(r),isNvr=/NVR/.test(r),isCore=/Núcleo/.test(r);
-      const cc=isFw||isNvr?vhex(50):isCore?hub:cssv('--v80');
-      const u=box(2.1,.5,1.9,cc,RACKX,y0+.4+i*.72+.25,0);
+    fl.rack.forEach((r,i)=>{const isFw=/FortiGate/.test(r),isNvr=/NVR/.test(r),isCore=/Núcleo/.test(r),yy=y0+.4+i*.72+.25;
+      const u=box(2.1,.5,1.9,isFw||isNvr?vhex(50):isCore?hub:cssv('--v80'),RX,yy,RZ);
       u.userData.tip=`${r}\n${isFw?'Router / firewall: gateway, OSPF, WAN e Internet':isNvr?'Grabador local · VLAN 50':isCore?'Gateways (SVI) de las VLAN · uplinks 10 GbE':'Switch de acceso · uplink 2 × 10 GbE LACP'}`;
       fg.add(u);st.pick.push(u);
-      for(let p=0;p<10;p++)fg.add(box(.1,.1,.05,'#e8f0f5',RACKX-.9+p*.2,y0+.4+i*.72+.25,.97));
-      const l=label(r,.5,{fg:ink,bg:surf,border:line});l.position.set(RACKX,y0+.4+i*.72+.25,1.5);fg.add(l);
-    });
-    path(muted,[[RACKX,y0+rackH,0],[RACKX,yT,0]],.12);
-    // bandejas principales
-    const sides={1:0,'-1':0};lay.bands.forEach(b=>{sides[b.side]=Math.max(sides[b.side],b.z0+.4);});
-    const trayM={transparent:true,opacity:.5};
-    fg.add(box(XMAX+.8-RACKX,.12,1.3,muted,(RACKX+XMAX+.8)/2,yT,0,trayM));
-    [1,-1].forEach(sd=>{if(sides[sd])fg.add(box(1.5,.12,sides[sd],muted,SPUR+.55,yT,sd*sides[sd]/2,trayM));});
-    const ntxt=label('bandeja de cableado UTP',.5,{fg:muted});ntxt.position.set(XMAX-3,yT+.5,0);fg.add(ntxt);
-    // bandas y grupos
-    let gi=0;
-    lay.bands.forEach(b=>{const sd=b.side,tz=sd*(b.z0+.4),last=Math.max(...b.groups.map(q=>q.x+q.w));
-      fg.add(box(last-SPUR+.2,.1,.5,muted,(SPUR+last)/2,yT,tz,trayM));
-      b.groups.forEach((q,bi)=>{const {gr}=q,col=vhex(gr.v),sh=SHAPE[gr.t],zl=(gi-6)*.08,gz=tz+(bi%5-2)*.07,sx=SPUR+gi*.09+.05;gi++;
-        const lastX=q.x+(q.cols-.5)*PITCH;
-        path(col,[[RACKX+.8,yT+.12,zl],[sx,yT+.12,zl],[sx,yT+.12,gz],[lastX,yT+.12,gz]],.06);
-        const tip=`${gr.n} × ${TYPES[gr.t].name} — ${gr.l}\n${gr.v?('VLAN '+gr.v+' '+VL[gr.v]):'Trunk 802.1Q: nativa 99 + VLAN 10/50/70'}\n${gr.s||TYPES[gr.t].def}`;
-        const lb=label(`${gr.n} ${gr.l}`,.75,{fg:ink,bg:surf,border:col});lb.position.set(q.x+q.w/2-PITCH/2+.1,y0+2.9,sd*(b.z0+1.6+(q.rows-1)*PITCH/2));fg.add(lb);
-        for(let i=0;i<gr.n;i++){const c=i%MAXC,r=Math.floor(i/MAXC),x=q.x+(c+.5)*PITCH,z=sd*(b.z0+1.6+r*PITCH),post=sh.post||0;
-          let geo,h;if(sh.b){geo=new THREE.BoxGeometry(...sh.b);h=sh.b[1];}else if(sh.s){geo=new THREE.SphereGeometry(sh.s,14,10);h=sh.s*2;}else{geo=new THREE.CylinderGeometry(sh.c[0],sh.c[0],sh.c[1],16);h=sh.c[1];}
-          const m=new THREE.Mesh(geo,M(col));m.position.set(x,y0+post+h/2,z);m.userData.tip=tip;fg.add(m);st.pick.push(m);
-          if(post)fg.add(box(.06,post,.06,muted,x,y0+post/2,z));
-          path(col,[[x,yT+.12,gz],[x,yT+.12,z],[x,y0+post+h,z]],.05);
-        }
+      for(let p=0;p<10;p++)fg.add(box(.1,.1,.05,'#e8f0f5',RX-.9+p*.2,yy,RZ+.97));
+      const l=label(r,.45,{fg:ink,bg:surf,border:line});l.position.set(RX,yy,RZ+1.5);fg.add(l);});
+    path(muted,[[RX,y0+rackH,RZ],[RX,yT,RZ]],.12);
+    // reparto de equipos por zona
+    const wt=Object.assign({},WGT[fl.k||'oficinas'],fl.w||{}),packable=T.zones.filter(z=>!z.noPack),per={};packable.forEach(z=>per[z.id]=[]);
+    fl.g.forEach(gr=>{const w=wt[gr.t==='pc'&&gr.v===20?'pc20':gr.t]||wt.pc;
+      alloc(gr.n,packable.map((_,i)=>w[i]||0)).forEach((c,i)=>{if(c)per[packable[i].id].push({gr,n:c});});});
+    const trayM={transparent:true,opacity:.5};let gi=0,minZ=0,maxZ=0;
+    fg.add(box(XSB-XSA+2,.12,1.3,muted,(XSA+XSB)/2,yT,RZ,trayM));
+    const tl=label('bandeja de cableado UTP',.5,{fg:muted});tl.position.set(XSB+5,yT+.5,RZ);fg.add(tl);
+    const spineExt={};
+    packable.forEach(z=>{
+      const sx0=(fl.k==='unico'?(z.id==='A'||z.id==='B'):z.id==='A')?XSA:XSB,left=sx0===XSA;
+      let res;for(const zp of [2.4,2,1.7,1.4,1.2,1,.85]){res=packZone(z,per[z.id],1.2,zp);if(!res.over)break;}
+      const byG=new Map();res.out.forEach(d=>{if(!byG.has(d.g))byG.set(d.g,[]);byG.get(d.g).push(d);});
+      const rowTray={};
+      byG.forEach((devs,g)=>{const {gr}=g,col=vhex(gr.v),sh=SHAPE[gr.t],h0=gi++,yy=yT+.1+(h0%8)*.06,sx=sx0+(left?-1:1)*(h0%12)*.07;
+        const zs=devs.map(d=>d.z),zf=Math.min(...zs),zl=Math.max(...zs),zoff=RZ+((h0%9)-4)*.12;
+        path(col,[[RX,yy,zoff],[sx,yy,zoff],[sx,yy,zf],[sx,yy,zl]],.06);
+        spineExt[sx0]=[Math.min(spineExt[sx0]?spineExt[sx0][0]:zf,zf),Math.max(spineExt[sx0]?spineExt[sx0][1]:zl,zl)];
+        const rows={};devs.forEach(d=>{(rows[d.z]=rows[d.z]||[]).push(d.x);});
+        Object.keys(rows).forEach(zk=>{const xs=rows[zk],a=Math.min(sx,...xs),b=Math.max(sx,...xs);path(col,[[a,yy,+zk],[b,yy,+zk]],.05);
+          const rt=rowTray[zk]=rowTray[zk]||[sx,sx];rt[0]=Math.min(rt[0],a);rt[1]=Math.max(rt[1],b);});
+        const tip=`${gr.n===g.n?g.n:g.n+' (de '+gr.n+')'} × ${TYPES[gr.t].name} — ${gr.l}\n${gr.v?('VLAN '+gr.v+' '+VL[gr.v]):'Trunk 802.1Q: nativa 99 + VLAN 10/50/70'}\n${gr.s||TYPES[gr.t].def}`;
+        const first=devs[0],lb=label(`${g.n} ${gr.l}`,.6,{fg:ink,bg:surf,border:col,left:true});lb.position.set(first.x-.55,y0+2.55,first.z);fg.add(lb);
+        devs.forEach(d=>{const post=sh.post||0;let geo,h;
+          if(sh.b){geo=new THREE.BoxGeometry(...sh.b);h=sh.b[1];}else if(sh.s){geo=new THREE.SphereGeometry(sh.s,14,10);h=sh.s*2;}else{geo=new THREE.CylinderGeometry(sh.c[0],sh.c[0],sh.c[1],16);h=sh.c[1];}
+          const m=new THREE.Mesh(geo,M(col));m.position.set(d.x,y0+post+h/2,d.z);m.userData.tip=tip;fg.add(m);st.pick.push(m);
+          if(post)fg.add(box(.06,post,.06,muted,d.x,y0+post/2,d.z));
+          path(col,[[d.x,yy,d.z],[d.x,y0+post+h,d.z]],.05);});
       });
+      Object.keys(rowTray).forEach(zk=>{const [a,b]=rowTray[zk];fg.add(box(b-a+.6,.1,.5,muted,(a+b)/2,yT,+zk,{transparent:true,opacity:.3}));});
+      if(res.over)console.warn('Zona sin espacio suficiente',k,fl.n,z.id);
     });
+    Object.keys(spineExt).forEach(sx=>{const [a,b]=spineExt[sx],c=Math.min(a,RZ)-.3,d=Math.max(b,RZ)+.3,xs=+sx;
+      fg.add(box(1.2,.12,d-c,muted,xs+(xs===XSA?-.45:.45),yT,(c+d)/2,trayM));});
     // cables → mallas instanciadas por color
     Object.keys(segs).forEach(col=>{const arr=segs[col],im=new THREE.InstancedMesh(new THREE.BoxGeometry(1,1,1),new THREE.MeshBasicMaterial({color:col}),arr.length),mx=new THREE.Matrix4(),q=new THREE.Quaternion();
       arr.forEach(([a,b,t],i)=>{mx.compose(new THREE.Vector3((a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2),q,new THREE.Vector3(Math.abs(a[0]-b[0])+t,Math.abs(a[1]-b[1])+t,Math.abs(a[2]-b[2])+t));im.setMatrixAt(i,mx);});
       fg.add(im);});
   });
-  // montante de fibra entre pisos
-  if(nf>1){const rg=new THREE.Group(),rx=RACKX-2.1,yA=.9,yB=(nf-1)*FH+.9;
-    rg.add(box(.26,yB-yA,.26,accent,rx,(yA+yB)/2,0));
-    for(let l=0;l<nf;l++)rg.add(box(2.1,.2,.2,accent,RACKX-1.05,l*FH+.9,0));
-    const rl=label(k==='BOG'?'Montante: 2 × 10 GbE LACP de cada piso al núcleo':'Montante: 2 × 10 GbE LACP al 6200M',.7,{fg:'#fff',bg:accent});rl.position.set(rx+rl.scale.x/2-1,-1.1,0);rg.add(rl);
+  // montante de fibra entre cuartos de racks
+  if(nf>1){const rg=new THREE.Group(),rx=RX+1.7,yA=.9,yB=(nf-1)*FH+.9;
+    rg.add(box(.26,yB-yA,.26,accent,rx,(yA+yB)/2,RZ));
+    for(let l=0;l<nf;l++)rg.add(box(.6,.2,.2,accent,RX+1.3,l*FH+.9,RZ));
+    const rl=label(k==='BOG'?'Montante: 2 × 10 GbE LACP de cada piso al núcleo':'Montante: 2 × 10 GbE LACP al 6200M',.7,{fg:'#fff',bg:accent});rl.position.set(rx,-1.1,RZ);rg.add(rl);
     root.add(rg);}
   setContent(st,root);
   // vistas y aislamiento de piso
   const ty=a=>a==null?(nf-1)*FH/2+2:a*FH+2;
-  const view=(name)=>{const t=new THREE.Vector3(0,ty(bsel),0),R=bsel==null?36+nf*6:50;
-    const dir=name==='frente'?new THREE.Vector3(0,.22,1):name==='planta'?new THREE.Vector3(0,1,.001):new THREE.Vector3(.5,.62,.85);
+  const view=name=>{const t=new THREE.Vector3(0,ty(bsel),0),R=bsel==null?46+nf*6:58;
+    const dir=name==='frente'?new THREE.Vector3(0,.22,1):name==='planta'?new THREE.Vector3(0,1,.001):new THREE.Vector3(.4,.7,.85);
     dir.normalize();st.controls.target.copy(t);st.camera.position.copy(t).addScaledVector(dir,R);st.controls.update();};
   const show=sel=>{bsel=sel;levels.forEach((g,i)=>{g.visible=sel==null||sel===i;});
     document.querySelectorAll('#bldBar [data-lv]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lv===String(sel==null?'all':sel))));};
-  bviewFn=view;
   const bar=document.getElementById('bldBar');
   bar.innerHTML=`<span class="bar-l">Piso</span><button class="tab" data-lv="all">Todos</button>`+s.floors.map((f,i)=>`<button class="tab" data-lv="${nf-1-i}">${f.n}</button>`).join('')+`<span class="bar-l sp">Vista</span><button class="tab" data-v="iso">Isométrica</button><button class="tab" data-v="frente">Frente</button><button class="tab" data-v="planta">Planta</button>`;
   bar.querySelectorAll('[data-lv]').forEach(b=>b.addEventListener('click',()=>{show(b.dataset.lv==='all'?null:+b.dataset.lv);view('iso');}));
@@ -407,7 +470,7 @@ function drawLegend(){
   <div><h3>Color del cable = VLAN</h3><ul>${vl.map(v=>`<li><svg width="34" height="10"><line x1="0" y1="5" x2="34" y2="5" stroke="var(--v${v})" stroke-width="3"/></svg><span>VLAN ${v} · ${VL[v]}</span></li>`).join('')}
   <li><svg width="34" height="10"><line x1="0" y1="5" x2="34" y2="5" stroke="var(--trunk)" stroke-width="3"/></svg><span>Trunk del AP (nativa 99 + VLAN 10/50/70)</span></li>
   <li><svg width="34" height="10"><line x1="0" y1="5" x2="34" y2="5" stroke="var(--accent)" stroke-width="4"/></svg><span>Montante de fibra 2 × 10 GbE (LACP)</span></li></ul></div>
-  <div><h3>Cómo leer el 3D</h3><p class="note">Cada piso es una losa flotante con su rack a la izquierda. Del rack sale la bandeja de cableado (gris) y de ella cuelga un cable por equipo, coloreado según su VLAN. Usa los botones de piso para aislar un nivel y los de vista para cambiar el ángulo. Los PC administrativos comparten el cable con el teléfono IP (switch interno de 2 puertos del Cisco 8841). En Bogotá cada piso sube al núcleo del piso 5 por el montante; en las regionales, al 6200M. Las cantidades salen de la tabla A1 del documento de diseño.</p></div>`;
+  <div><h3>Cómo leer el 3D</h3><p class="note">Cada piso sigue el plano de la sede: cuarto de racks (Gabinete o Telecom) arriba al centro, zonas de Producción, Seguridad, Administración y Ventas, sala de juntas, escaleras y baños, con paredes, ventanales de vidrio (azul) y puertas (arcos). Del cuarto de racks sale la bandeja de cableado (gris) y de ella cuelga un cable por equipo, coloreado según su VLAN. Usa los botones de piso para aislar un nivel y los de vista para cambiar el ángulo. Los PC administrativos comparten el cable con el teléfono IP (switch interno de 2 puertos del Cisco 8841). En Bogotá cada piso sube al núcleo del piso 5 por el montante; en las regionales, al 6200M. Las cantidades salen de la tabla A1 del documento de diseño.</p></div>`;
 }
 let cur='BOG';
 function select(k){cur=k;drawInfo(k);drawBuilding(k);drawMap();try{localStorage.setItem('ppy-sede',k)}catch(e){}}
